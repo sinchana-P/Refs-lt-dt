@@ -1,0 +1,165 @@
+{
+  "id": "PeVveNmnHNtNXMRcdkFrc",
+  "name": "New Workflow",
+  "workflowName": "New Workflow",
+  "itemType": "workflow",
+  "appId": "FXogVKJjOiHXhwyaEBIqK",
+  "folderId": "zugdUxNRunxMTDKnCeSGW",
+  "type": "ORCHESTRATION",
+  "version": "0.0.1",
+  "steps": [
+    {
+      "id": "WlWJLNzGaHvOumyBwndrg",
+      "stepName": "End",
+      "stepType": "END",
+      "icon": "",
+      "indicator": "",
+      "description": "",
+      "deletable": true,
+      "config": {
+        "activityType": "END",
+        "activityName": "End",
+        "activityGroup": "Common",
+        "name": "End",
+        "config.name": "End",
+        "sourceSchemas": [
+          "QqqegpKpzODKqoMnLfcub",
+          "DVLmBNBMlcGDfDsUUyIoa"
+        ]
+      }
+    },
+    {
+      "id": "QqqegpKpzODKqoMnLfcub",
+      "stepName": "LookupUpsert",
+      "stepType": "SIMPLE",
+      "icon": "",
+      "indicator": "",
+      "description": "",
+      "deletable": true,
+      "config": {
+        "activityName": "LookupUpsert",
+        "activityGroup": "Common",
+        "activityType": "SIMPLE",
+        "name": "LookupUpsert",
+        "description": "",
+        "lookupTable": "lt:{\"id\":\"DtfnzZUiDdilqgUBdmxmQ\",\"name\":\"Feree22\"}",
+        "config.name": "LookupUpsert",
+        "sourceSchemas": [
+          "DVLmBNBMlcGDfDsUUyIoa"
+        ]
+      }
+    },
+    {
+      "id": "DVLmBNBMlcGDfDsUUyIoa",
+      "stepName": "RESTService",
+      "stepType": "EVENT_SOURCE",
+      "icon": "",
+      "indicator": "",
+      "description": "This resource is for HTTP Server",
+      "deletable": true,
+      "config": {
+        "name": "RESTService",
+        "description": "",
+        "path": "",
+        "method": [
+          "GET"
+        ],
+        "allowedMediaTypes": [
+          "application/json"
+        ],
+        "headers": [],
+        "queryParams": [],
+        "pathParams": [],
+        "output": "",
+        "activityType": "EVENT_SOURCE",
+        "activityGroup": "HTTP",
+        "activityName": "RESTService",
+        "showHttpFormSelectionPanel": true,
+        "config.name": "RESTService",
+        "sourceSchemas": []
+      },
+      "activityCluster": null
+    }
+  ],
+  "transitions": [
+    {
+      "id": "GLojaPGmJWtQIYnWmpXpV",
+      "from": "QqqegpKpzODKqoMnLfcub",
+      "to": "WlWJLNzGaHvOumyBwndrg",
+      "handleMap": {
+        "source": "QqqegpKpzODKqoMnLfcub_2",
+        "target": "WlWJLNzGaHvOumyBwndrg_1"
+      },
+      "name": "",
+      "description": "",
+      "type": "DEFAULT",
+      "lineType": "step",
+      "lineColor": "#8c8c8c"
+    },
+    {
+      "id": "VNIOxrDxKKfkOEDotJFIV",
+      "from": "DVLmBNBMlcGDfDsUUyIoa",
+      "to": "QqqegpKpzODKqoMnLfcub",
+      "handleMap": {
+        "source": "DVLmBNBMlcGDfDsUUyIoa_1",
+        "target": "QqqegpKpzODKqoMnLfcub_1"
+      },
+      "name": "",
+      "description": "",
+      "type": "DEFAULT",
+      "lineType": "step",
+      "lineColor": "#8c8c8c"
+    }
+  ],
+  "diagram": {
+    "WlWJLNzGaHvOumyBwndrg": {
+      "x": 512,
+      "y": 48,
+      "handles": [
+        {
+          "type": "source",
+          "position": "left",
+          "id": "WlWJLNzGaHvOumyBwndrg_1"
+        }
+      ],
+      "sourcePosition": null,
+      "targetPosition": "left"
+    },
+    "QqqegpKpzODKqoMnLfcub": {
+      "x": 240,
+      "y": 48,
+      "handles": [
+        {
+          "type": "target",
+          "position": "left",
+          "id": "QqqegpKpzODKqoMnLfcub_1"
+        },
+        {
+          "type": "source",
+          "position": "right",
+          "id": "QqqegpKpzODKqoMnLfcub_2"
+        }
+      ],
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    "DVLmBNBMlcGDfDsUUyIoa": {
+      "x": 16,
+      "y": 48,
+      "handles": [
+        {
+          "type": "source",
+          "position": "right",
+          "id": "DVLmBNBMlcGDfDsUUyIoa_1"
+        }
+      ],
+      "sourcePosition": "right",
+      "targetPosition": null
+    }
+  },
+  "mappings": {},
+  "notes": [],
+  "config": {
+    "name": "New Workflow"
+  }
+}
