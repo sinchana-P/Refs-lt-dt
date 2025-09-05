@@ -1,0 +1,166 @@
+{
+  "id": "mphTHytCZDASkuFEeoIYU",
+  "name": "New Workflow_2",
+  "workflowName": "New Workflow_2",
+  "itemType": "workflow",
+  "appId": "FXogVKJjOiHXhwyaEBIqK",
+  "folderId": "yTZBhHDizArckJwzWlqcG",
+  "type": "ORCHESTRATION",
+  "version": "0.0.1",
+  "steps": [
+    {
+      "id": "GaIPGBwYjeJzyDzuqjeHk",
+      "stepName": "End",
+      "stepType": "END",
+      "icon": "",
+      "indicator": "",
+      "description": "",
+      "deletable": true,
+      "config": {
+        "activityType": "END",
+        "activityName": "End",
+        "activityGroup": "Common",
+        "name": "End",
+        "sourceSchemas": [
+          "zlUeudffqmCDvtPWuSdDU",
+          "YTVeWajMMsowQUeZkeear"
+        ]
+      }
+    },
+    {
+      "id": "YTVeWajMMsowQUeZkeear",
+      "stepName": "TestService",
+      "stepType": "EVENT_SOURCE",
+      "icon": "",
+      "indicator": "",
+      "description": "",
+      "deletable": true,
+      "config": {
+        "activityName": "TestService",
+        "activityGroup": "ForTestingPurpose",
+        "activityType": "EVENT_SOURCE",
+        "name": "TestService",
+        "description": "",
+        "path": "/lookup/{name}",
+        "method": [
+          "GET"
+        ],
+        "allowedMediaTypes": [
+          "application/json"
+        ],
+        "queryParams": [],
+        "pathParams": [],
+        "headers": [],
+        "output": "",
+        "isCustomType": true,
+        "templateOfActivity": "RESTService",
+        "templateOfGroup": "HTTP",
+        "sourceSchemas": []
+      },
+      "activityCluster": null
+    },
+    {
+      "id": "zlUeudffqmCDvtPWuSdDU",
+      "stepName": "Lookup",
+      "stepType": "SIMPLE",
+      "icon": "",
+      "indicator": "",
+      "description": "",
+      "deletable": true,
+      "config": {
+        "activityName": "Lookup",
+        "activityGroup": "Common",
+        "activityType": "SIMPLE",
+        "name": "Lookup",
+        "description": "",
+        "lookupTable": "lt:{\"id\" : \"WVpVdmeMuqYbbqmjKmmQO\",\"name\" : \"UserData\"}",
+        "workflowLoader": "wf:{\"id\":\"\",\"name\":\"\"}",
+        "output": "",
+        "sourceSchemas": [
+          "YTVeWajMMsowQUeZkeear"
+        ]
+      }
+    }
+  ],
+  "transitions": [
+    {
+      "id": "UsLjTqFPQstdvpfaISLVy",
+      "from": "YTVeWajMMsowQUeZkeear",
+      "to": "zlUeudffqmCDvtPWuSdDU",
+      "handleMap": {
+        "source": "YTVeWajMMsowQUeZkeear_1",
+        "target": "zlUeudffqmCDvtPWuSdDU_1"
+      },
+      "name": "",
+      "description": "",
+      "type": "DEFAULT",
+      "lineType": "step",
+      "lineColor": "#8c8c8c"
+    },
+    {
+      "id": "jFmcKYENEtFlwTVVxZqCk",
+      "from": "zlUeudffqmCDvtPWuSdDU",
+      "to": "GaIPGBwYjeJzyDzuqjeHk",
+      "handleMap": {
+        "source": "zlUeudffqmCDvtPWuSdDU_2",
+        "target": "GaIPGBwYjeJzyDzuqjeHk_1"
+      },
+      "name": "",
+      "description": "",
+      "type": "DEFAULT",
+      "lineType": "step",
+      "lineColor": "#8c8c8c"
+    }
+  ],
+  "diagram": {
+    "GaIPGBwYjeJzyDzuqjeHk": {
+      "x": 512,
+      "y": 48,
+      "handles": [
+        {
+          "type": "source",
+          "position": "left",
+          "id": "GaIPGBwYjeJzyDzuqjeHk_1"
+        }
+      ],
+      "sourcePosition": null,
+      "targetPosition": "left"
+    },
+    "YTVeWajMMsowQUeZkeear": {
+      "x": 16,
+      "y": 48,
+      "handles": [
+        {
+          "type": "source",
+          "position": "right",
+          "id": "YTVeWajMMsowQUeZkeear_1"
+        }
+      ],
+      "sourcePosition": "right",
+      "targetPosition": null
+    },
+    "zlUeudffqmCDvtPWuSdDU": {
+      "x": 256,
+      "y": 48,
+      "handles": [
+        {
+          "type": "source",
+          "position": "left",
+          "id": "zlUeudffqmCDvtPWuSdDU_1"
+        },
+        {
+          "type": "source",
+          "position": "right",
+          "id": "zlUeudffqmCDvtPWuSdDU_2"
+        }
+      ],
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    }
+  },
+  "mappings": {},
+  "notes": [],
+  "config": {
+    "name": "New Workflow"
+  }
+}

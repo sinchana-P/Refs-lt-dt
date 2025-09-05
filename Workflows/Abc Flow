@@ -1,0 +1,396 @@
+{
+  "id": "pmftpQrgsGVYoZNuCAbos",
+  "name": "Abc Flow",
+  "workflowName": "Abc Flow",
+  "itemType": "workflow",
+  "appId": "FXogVKJjOiHXhwyaEBIqK",
+  "folderId": "yTZBhHDizArckJwzWlqcG",
+  "type": "ORCHESTRATION",
+  "version": "0.0.1",
+  "steps": [
+    {
+      "id": "GeYmvZpHsfdtYEbHqTGTa",
+      "stepName": "RESTService",
+      "stepType": "EVENT_SOURCE",
+      "icon": "",
+      "indicator": "",
+      "description": "This resource is for HTTP Server",
+      "deletable": true,
+      "config": {
+        "name": "RESTService",
+        "description": "",
+        "path": "",
+        "method": [
+          "GET"
+        ],
+        "allowedMediaTypes": [
+          "application/json"
+        ],
+        "headers": [],
+        "queryParams": [],
+        "pathParams": [],
+        "output": "",
+        "activityType": "EVENT_SOURCE",
+        "activityGroup": "HTTP",
+        "activityName": "RESTService",
+        "showHttpFormSelectionPanel": false,
+        "sourceSchemas": []
+      },
+      "activityCluster": null
+    },
+    {
+      "id": "NBxNbJwMQZauofEgCHMPH",
+      "stepName": "DataTableQuery",
+      "stepType": "SIMPLE",
+      "icon": "",
+      "indicator": "",
+      "description": "",
+      "deletable": true,
+      "config": {
+        "activityName": "DataTableQuery",
+        "activityGroup": "DataTables",
+        "activityType": "SIMPLE",
+        "name": "DataTableQuery",
+        "description": "",
+        "dataTable": "dt:{\"id\" : \"EJtwjrNouInUZgJOVDrbD\",\"name\" : \"abclll\"}",
+        "pageSize": 100,
+        "batchSize": 0,
+        "rowNum": false,
+        "isSummarize": false,
+        "output": "",
+        "isCustomType": true,
+        "sourceSchemas": [
+          "GeYmvZpHsfdtYEbHqTGTa",
+          "nkzIncIRoFIoMjCwspgsJ"
+        ]
+      }
+    },
+    {
+      "id": "lysLLzPjhtXrYsiZJvvHT",
+      "stepName": "2xj",
+      "stepType": "SIMPLE",
+      "icon": "",
+      "indicator": "",
+      "description": "This activity is for subflow.",
+      "deletable": true,
+      "config": {
+        "name": "2xj",
+        "description": "",
+        "output": "",
+        "activityGroup": "Math",
+        "activityName": "2x",
+        "activityType": "SIMPLE",
+        "isCustomType": true,
+        "templateOfActivity": "Subflow",
+        "templateOfGroup": "Common",
+        "sourceSchemas": [
+          "NBxNbJwMQZauofEgCHMPH",
+          "nkzIncIRoFIoMjCwspgsJ",
+          "GeYmvZpHsfdtYEbHqTGTa"
+        ]
+      }
+    },
+    {
+      "id": "CejjlqaHbedmbsdFAijEd",
+      "stepName": "SubflowCustomAcitivity",
+      "stepType": "SIMPLE",
+      "icon": "",
+      "indicator": "",
+      "description": "",
+      "deletable": true,
+      "config": {
+        "activityGroup": "ForTestingPurpose",
+        "activityName": "SubflowCustomAcitivity",
+        "activityType": "SIMPLE",
+        "isCustomType": true,
+        "templateOfActivity": "Subflow",
+        "templateOfGroup": "Common",
+        "name": "SubflowCustomAcitivity",
+        "sourceSchemas": [
+          "lysLLzPjhtXrYsiZJvvHT",
+          "NBxNbJwMQZauofEgCHMPH",
+          "nkzIncIRoFIoMjCwspgsJ",
+          "GeYmvZpHsfdtYEbHqTGTa"
+        ]
+      }
+    },
+    {
+      "id": "FAKDDTOkajXUvgIwiBSyb",
+      "stepName": "End",
+      "stepType": "END",
+      "icon": "",
+      "indicator": "",
+      "description": "",
+      "deletable": true,
+      "config": {
+        "activityType": "END",
+        "activityName": "End",
+        "activityGroup": "Common",
+        "name": "End",
+        "sourceSchemas": [
+          "dANkgBFNBeWLbsCsJjILZ",
+          "CejjlqaHbedmbsdFAijEd",
+          "lysLLzPjhtXrYsiZJvvHT",
+          "NBxNbJwMQZauofEgCHMPH",
+          "nkzIncIRoFIoMjCwspgsJ",
+          "GeYmvZpHsfdtYEbHqTGTa"
+        ]
+      }
+    },
+    {
+      "id": "dANkgBFNBeWLbsCsJjILZ",
+      "stepName": "InstallActiity2",
+      "stepType": "SIMPLE",
+      "icon": "",
+      "indicator": "",
+      "description": "",
+      "deletable": true,
+      "config": {
+        "name": "InstallActiity2",
+        "description": "",
+        "output": "",
+        "activityGroup": "ForTestingPurpose",
+        "activityName": "InstallActiity2",
+        "activityType": "SIMPLE",
+        "isCustomType": true,
+        "sourceSchemas": [
+          "CejjlqaHbedmbsdFAijEd",
+          "lysLLzPjhtXrYsiZJvvHT",
+          "NBxNbJwMQZauofEgCHMPH",
+          "nkzIncIRoFIoMjCwspgsJ",
+          "GeYmvZpHsfdtYEbHqTGTa"
+        ]
+      }
+    },
+    {
+      "id": "nkzIncIRoFIoMjCwspgsJ",
+      "stepName": "LookupAB",
+      "stepType": "SIMPLE",
+      "icon": "",
+      "indicator": "",
+      "description": "",
+      "deletable": true,
+      "config": {
+        "activityName": "Lookup",
+        "activityGroup": "Common",
+        "activityType": "SIMPLE",
+        "name": "LookupAB",
+        "description": "",
+        "lookupTable": "lt:{\"id\" : \"RiBHaWZDiPIxfQcEXiVWP\", \"name\" : \"okk-3hhhh\"}",
+        "workflowLoader": "wf:{\"id\":\"\",\"name\":\"\"}",
+        "sourceSchemas": [
+          "GeYmvZpHsfdtYEbHqTGTa"
+        ]
+      }
+    }
+  ],
+  "transitions": [
+    {
+      "id": "dEDXliNEaibxbJliDbizH",
+      "from": "GeYmvZpHsfdtYEbHqTGTa",
+      "to": "nkzIncIRoFIoMjCwspgsJ",
+      "handleMap": {
+        "source": "GeYmvZpHsfdtYEbHqTGTa_1",
+        "target": "nkzIncIRoFIoMjCwspgsJ_1"
+      },
+      "name": "",
+      "description": "",
+      "type": "DEFAULT",
+      "lineType": "step",
+      "lineColor": "#8c8c8c"
+    },
+    {
+      "id": "GRyboNZGVxqFUTutwFEbe",
+      "from": "nkzIncIRoFIoMjCwspgsJ",
+      "to": "NBxNbJwMQZauofEgCHMPH",
+      "handleMap": {
+        "source": "nkzIncIRoFIoMjCwspgsJ_2",
+        "target": "NBxNbJwMQZauofEgCHMPH_1"
+      },
+      "name": "",
+      "description": "",
+      "type": "DEFAULT",
+      "lineType": "step",
+      "lineColor": "#8c8c8c"
+    },
+    {
+      "id": "HZcPzVtGIxWrDITXvikLE",
+      "from": "NBxNbJwMQZauofEgCHMPH",
+      "to": "lysLLzPjhtXrYsiZJvvHT",
+      "handleMap": {
+        "source": "NBxNbJwMQZauofEgCHMPH_2",
+        "target": "lysLLzPjhtXrYsiZJvvHT_1"
+      },
+      "name": "",
+      "description": "",
+      "type": "DEFAULT",
+      "lineType": "step",
+      "lineColor": "#8c8c8c"
+    },
+    {
+      "id": "DdJRoxHtWVRzabBsaWGoT",
+      "from": "lysLLzPjhtXrYsiZJvvHT",
+      "to": "CejjlqaHbedmbsdFAijEd",
+      "handleMap": {
+        "source": "lysLLzPjhtXrYsiZJvvHT_2",
+        "target": "CejjlqaHbedmbsdFAijEd_1"
+      },
+      "name": "",
+      "description": "",
+      "type": "DEFAULT",
+      "lineType": "step",
+      "lineColor": "#8c8c8c"
+    },
+    {
+      "id": "efbbDAALEdwpdEMOYwkfC",
+      "from": "CejjlqaHbedmbsdFAijEd",
+      "to": "dANkgBFNBeWLbsCsJjILZ",
+      "handleMap": {
+        "source": "CejjlqaHbedmbsdFAijEd_2",
+        "target": "dANkgBFNBeWLbsCsJjILZ_1"
+      },
+      "name": "",
+      "description": "",
+      "type": "DEFAULT",
+      "lineType": "step",
+      "lineColor": "#8c8c8c"
+    },
+    {
+      "id": "iyEGkVpLAzxeHrDbupfWw",
+      "from": "dANkgBFNBeWLbsCsJjILZ",
+      "to": "FAKDDTOkajXUvgIwiBSyb",
+      "handleMap": {
+        "source": "dANkgBFNBeWLbsCsJjILZ_2",
+        "target": "FAKDDTOkajXUvgIwiBSyb_1"
+      },
+      "name": "",
+      "description": "",
+      "type": "DEFAULT",
+      "lineType": "step",
+      "lineColor": "#8c8c8c"
+    }
+  ],
+  "diagram": {
+    "GeYmvZpHsfdtYEbHqTGTa": {
+      "x": 16,
+      "y": 48,
+      "handles": [
+        {
+          "type": "source",
+          "position": "right",
+          "id": "GeYmvZpHsfdtYEbHqTGTa_1"
+        }
+      ],
+      "sourcePosition": "right",
+      "targetPosition": null
+    },
+    "NBxNbJwMQZauofEgCHMPH": {
+      "x": 304,
+      "y": 48,
+      "handles": [
+        {
+          "position": "left",
+          "type": "source",
+          "id": "NBxNbJwMQZauofEgCHMPH_1"
+        },
+        {
+          "position": "right",
+          "type": "source",
+          "id": "NBxNbJwMQZauofEgCHMPH_2"
+        }
+      ],
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    "lysLLzPjhtXrYsiZJvvHT": {
+      "x": 464,
+      "y": 48,
+      "handles": [
+        {
+          "type": "source",
+          "position": "left",
+          "id": "lysLLzPjhtXrYsiZJvvHT_1"
+        },
+        {
+          "type": "source",
+          "position": "right",
+          "id": "lysLLzPjhtXrYsiZJvvHT_2"
+        }
+      ],
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    "CejjlqaHbedmbsdFAijEd": {
+      "x": 628,
+      "y": 48,
+      "handles": [
+        {
+          "type": "target",
+          "position": "left",
+          "id": "CejjlqaHbedmbsdFAijEd_1"
+        },
+        {
+          "type": "source",
+          "position": "right",
+          "id": "CejjlqaHbedmbsdFAijEd_2"
+        }
+      ],
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    "FAKDDTOkajXUvgIwiBSyb": {
+      "x": 1128,
+      "y": 48,
+      "handles": [
+        {
+          "type": "source",
+          "position": "left",
+          "id": "FAKDDTOkajXUvgIwiBSyb_1"
+        }
+      ],
+      "sourcePosition": null,
+      "targetPosition": "left"
+    },
+    "dANkgBFNBeWLbsCsJjILZ": {
+      "x": 800,
+      "y": 48,
+      "handles": [
+        {
+          "type": "source",
+          "position": "left",
+          "id": "dANkgBFNBeWLbsCsJjILZ_1"
+        },
+        {
+          "type": "source",
+          "position": "right",
+          "id": "dANkgBFNBeWLbsCsJjILZ_2"
+        }
+      ],
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    "nkzIncIRoFIoMjCwspgsJ": {
+      "x": 176,
+      "y": 48,
+      "handles": [
+        {
+          "type": "target",
+          "position": "left",
+          "id": "nkzIncIRoFIoMjCwspgsJ_1"
+        },
+        {
+          "type": "source",
+          "position": "right",
+          "id": "nkzIncIRoFIoMjCwspgsJ_2"
+        }
+      ],
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    }
+  },
+  "mappings": {},
+  "notes": [],
+  "config": {
+    "name": "New Workflow"
+  }
+}

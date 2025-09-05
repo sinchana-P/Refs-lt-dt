@@ -1,0 +1,228 @@
+{
+  "id": "bcUaXdIUKNJyfrVQZvkIQ",
+  "name": "mapper",
+  "workflowName": "mapper",
+  "itemType": "workflow",
+  "appId": "FXogVKJjOiHXhwyaEBIqK",
+  "folderId": "yTZBhHDizArckJwzWlqcG",
+  "type": "ORCHESTRATION",
+  "version": "0.0.1",
+  "steps": [
+    {
+      "id": "QnfPhdznNPlSGiuuKnEfv",
+      "stepName": "End",
+      "stepType": "END",
+      "icon": "",
+      "indicator": "",
+      "description": "",
+      "deletable": true,
+      "config": {
+        "activityName": "End",
+        "activityGroup": "Common",
+        "activityType": "END",
+        "name": "End",
+        "sourceSchemas": [
+          "rkpRkszgNakCUferipaId",
+          "mRqmmfVnhkOBNVFBiMmJo"
+        ],
+        "targetSchema": "uLjrnzdofqWrkbHOMBQou"
+      },
+      "activityCluster": []
+    },
+    {
+      "id": "mRqmmfVnhkOBNVFBiMmJo",
+      "stepName": "RESTService",
+      "stepType": "EVENT_SOURCE",
+      "icon": "",
+      "indicator": "",
+      "description": "",
+      "deletable": true,
+      "config": {
+        "activityName": "RESTService",
+        "activityGroup": "HTTP",
+        "activityType": "EVENT_SOURCE",
+        "name": "RESTService",
+        "description": "",
+        "path": "/mapper?name&age&city&role&country",
+        "method": [
+          "POST"
+        ],
+        "allowedMediaTypes": [
+          "application/json"
+        ],
+        "output": "GGqlmZjuqbtGiVptPvKOd",
+        "queryParams": [
+          {
+            "name": "name",
+            "type": "text",
+            "defaultValue": "",
+            "required": false
+          },
+          {
+            "name": "age",
+            "type": "number",
+            "defaultValue": "",
+            "required": false
+          },
+          {
+            "name": "city",
+            "type": "text",
+            "defaultValue": "",
+            "required": false
+          },
+          {
+            "name": "role",
+            "type": "text",
+            "defaultValue": "",
+            "required": false
+          },
+          {
+            "name": "country",
+            "type": "text",
+            "defaultValue": "",
+            "required": false
+          }
+        ],
+        "pathParams": [],
+        "headers": [],
+        "showHttpFormSelectionPanel": false,
+        "sourceSchemas": []
+      },
+      "activityCluster": []
+    },
+    {
+      "id": "rkpRkszgNakCUferipaId",
+      "stepName": "Mapper",
+      "stepType": "SIMPLE",
+      "icon": "",
+      "indicator": "",
+      "description": "",
+      "deletable": true,
+      "config": {
+        "activityName": "Mapper",
+        "activityGroup": "Common",
+        "activityType": "SIMPLE",
+        "name": "Mapper",
+        "sourceSchemas": [
+          "mRqmmfVnhkOBNVFBiMmJo"
+        ],
+        "targetSchema": "GGqlmZjuqbtGiVptPvKOd"
+      }
+    }
+  ],
+  "transitions": [
+    {
+      "id": "nLJVMfbDdNuVGrXwlyfeL",
+      "from": "rkpRkszgNakCUferipaId",
+      "to": "QnfPhdznNPlSGiuuKnEfv",
+      "handleMap": {
+        "source": "rkpRkszgNakCUferipaId_2",
+        "target": "QnfPhdznNPlSGiuuKnEfv_1"
+      },
+      "name": "",
+      "description": "",
+      "type": "DEFAULT",
+      "lineType": "step",
+      "lineColor": "#8c8c8c"
+    },
+    {
+      "id": "UksGMYSjVNWwTApBUtPuH",
+      "from": "mRqmmfVnhkOBNVFBiMmJo",
+      "to": "rkpRkszgNakCUferipaId",
+      "handleMap": {
+        "source": "mRqmmfVnhkOBNVFBiMmJo_1",
+        "target": "rkpRkszgNakCUferipaId_1"
+      },
+      "name": "",
+      "description": "",
+      "type": "DEFAULT",
+      "lineType": "step",
+      "lineColor": "#8c8c8c"
+    }
+  ],
+  "diagram": {
+    "QnfPhdznNPlSGiuuKnEfv": {
+      "x": 580,
+      "y": 48,
+      "handles": [
+        {
+          "type": "source",
+          "position": "left",
+          "id": "QnfPhdznNPlSGiuuKnEfv_1"
+        }
+      ],
+      "sourcePosition": null,
+      "targetPosition": "left"
+    },
+    "mRqmmfVnhkOBNVFBiMmJo": {
+      "x": 16,
+      "y": 48,
+      "handles": [
+        {
+          "type": "source",
+          "position": "right",
+          "id": "mRqmmfVnhkOBNVFBiMmJo_1"
+        }
+      ],
+      "sourcePosition": "right",
+      "targetPosition": null
+    },
+    "rkpRkszgNakCUferipaId": {
+      "x": 192,
+      "y": 48,
+      "handles": [
+        {
+          "type": "target",
+          "position": "left",
+          "id": "rkpRkszgNakCUferipaId_1"
+        },
+        {
+          "type": "source",
+          "position": "right",
+          "id": "rkpRkszgNakCUferipaId_2"
+        }
+      ],
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    }
+  },
+  "mappings": {
+    "rkpRkszgNakCUferipaId": {
+      "metaInfo": {
+        "id": "rkpRkszgNakCUferipaId",
+        "versionInfo": {
+          "version": "1.0.0"
+        },
+        "name": "Mapper",
+        "description": ""
+      },
+      "mappings": {
+        "Mapper": {
+          "name": "$.error.errorCode"
+        }
+      },
+      "attributes": {}
+    },
+    "QnfPhdznNPlSGiuuKnEfv": {
+      "metaInfo": {
+        "id": "QnfPhdznNPlSGiuuKnEfv",
+        "versionInfo": {
+          "version": "1.0.0"
+        },
+        "name": "End",
+        "description": ""
+      },
+      "mappings": {
+        "End": {
+          "name": "$.Mapper.name",
+          "age": "$.Mapper.age"
+        }
+      },
+      "attributes": {}
+    }
+  },
+  "notes": [],
+  "config": {
+    "name": "New Workflow"
+  }
+}

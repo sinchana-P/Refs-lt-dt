@@ -1,0 +1,208 @@
+{
+  "id": "XkYuamjdLjrnErDYmWufJ",
+  "name": "abcd",
+  "workflowName": "abcd",
+  "itemType": "workflow",
+  "appId": "FXogVKJjOiHXhwyaEBIqK",
+  "folderId": "yTZBhHDizArckJwzWlqcG",
+  "type": "ORCHESTRATION",
+  "version": "0.0.1",
+  "steps": [
+    {
+      "id": "QzGtiPsKcsuOezzibDJgj",
+      "stepName": "End",
+      "stepType": "END",
+      "icon": "",
+      "indicator": "",
+      "deletable": true,
+      "config": {
+        "activityGroup": "Common",
+        "activityName": "End",
+        "description": "This activity is for scheduling.",
+        "sourceSchemas": [
+          "QlMOmiEfYPiPUiVbvYAOl",
+          "iiqSajhjsEgvRYkZxnlUp",
+          "FGtgjMFKaIxQeuMXOSXBj"
+        ],
+        "name": "End"
+      }
+    },
+    {
+      "id": "QlMOmiEfYPiPUiVbvYAOl",
+      "stepName": "LookupDelete",
+      "stepType": "SIMPLE",
+      "icon": "",
+      "indicator": "",
+      "deletable": true,
+      "config": {
+        "activityGroup": "Common",
+        "activityName": "LookupDelete",
+        "description": "This activity is used to delete data to a lookup table.",
+        "lookupTable": "lt:{\"id\" : \"RiBHaWZDiPIxfQcEXiVWP\",\"name\" : \"data\"}",
+        "workflowLoader": "wf:{\"id\":\"zoIhDnEetcwanzqxYArsr/xHFPOpuLeWuZBUYJjvToH\",\"name\":\"/Workflows/New Workflow_1_1\"}",
+        "sourceSchemas": [
+          "iiqSajhjsEgvRYkZxnlUp",
+          "FGtgjMFKaIxQeuMXOSXBj"
+        ],
+        "name": "LookupDelete"
+      }
+    },
+    {
+      "id": "FGtgjMFKaIxQeuMXOSXBj",
+      "stepName": "RESTService",
+      "stepType": "EVENT_SOURCE",
+      "icon": "",
+      "indicator": "",
+      "deletable": true,
+      "config": {
+        "activityGroup": "HTTP",
+        "activityName": "RESTService",
+        "description": "This resource is for HTTP Server",
+        "headers": [
+          {
+            "name": "Location",
+            "defaultValue": "$:{\"id\":{},\"name\":\"https://google.com\"}",
+            "inRequest": false,
+            "inResponse": true,
+            "required": false
+          }
+        ],
+        "path": "/test/redirect",
+        "method": [
+          "GET"
+        ],
+        "allowedMediaTypes": [
+          "application/json"
+        ],
+        "sourceSchemas": [],
+        "name": "RESTService"
+      }
+    },
+    {
+      "id": "iiqSajhjsEgvRYkZxnlUp",
+      "stepName": "RESTClient",
+      "stepType": "SIMPLE",
+      "icon": "",
+      "indicator": "",
+      "deletable": true,
+      "config": {
+        "activityGroup": "HTTP",
+        "activityName": "RESTClient",
+        "description": "Integrate REST API calls into your workflow seamlessly with RESTClient",
+        "scheme": "HTTP",
+        "uri": "$:{\"id\":{},\"name\":\"\"}",
+        "host": "$:{\"id\":{},\"name\":\"\"}",
+        "port": "$:{\"id\":{\"${ABC.port}\":\"FOWRhzRrrXJmYbawDrQwI/xGRCmFicYPjeQXfszCZBZ\"},\"name\":\"${ABC.port}\"}",
+        "method": "GET",
+        "sourceSchemas": [
+          "FGtgjMFKaIxQeuMXOSXBj"
+        ],
+        "name": "RESTClient"
+      }
+    }
+  ],
+  "transitions": [
+    {
+      "id": "transition-1",
+      "from": "FGtgjMFKaIxQeuMXOSXBj",
+      "to": "iiqSajhjsEgvRYkZxnlUp",
+      "handleMap": {},
+      "name": "",
+      "description": "",
+      "type": "DEFAULT",
+      "lineType": "step",
+      "lineColor": "var(--color-gray-7)"
+    },
+    {
+      "id": "transition-2",
+      "from": "iiqSajhjsEgvRYkZxnlUp",
+      "to": "QlMOmiEfYPiPUiVbvYAOl",
+      "handleMap": {},
+      "name": "",
+      "description": "",
+      "type": "DEFAULT",
+      "lineType": "step",
+      "lineColor": "var(--color-gray-7)"
+    },
+    {
+      "id": "transition-3",
+      "from": "QlMOmiEfYPiPUiVbvYAOl",
+      "to": "QzGtiPsKcsuOezzibDJgj",
+      "handleMap": {},
+      "name": "",
+      "description": "",
+      "type": "DEFAULT",
+      "lineType": "step",
+      "lineColor": "var(--color-gray-7)"
+    }
+  ],
+  "diagram": {
+    "QzGtiPsKcsuOezzibDJgj": {
+      "x": 648,
+      "y": 48,
+      "handles": [
+        {
+          "type": "source",
+          "position": "left",
+          "id": "QzGtiPsKcsuOezzibDJgj_1"
+        }
+      ],
+      "sourcePosition": null,
+      "targetPosition": null
+    },
+    "QlMOmiEfYPiPUiVbvYAOl": {
+      "x": 400,
+      "y": 64,
+      "handles": [
+        {
+          "type": "target",
+          "position": "left",
+          "id": "QlMOmiEfYPiPUiVbvYAOl_1"
+        },
+        {
+          "type": "source",
+          "position": "right",
+          "id": "QlMOmiEfYPiPUiVbvYAOl_2"
+        }
+      ],
+      "sourcePosition": null,
+      "targetPosition": null
+    },
+    "FGtgjMFKaIxQeuMXOSXBj": {
+      "x": 16,
+      "y": 48,
+      "handles": [
+        {
+          "type": "source",
+          "position": "right",
+          "id": "FGtgjMFKaIxQeuMXOSXBj_1"
+        }
+      ],
+      "sourcePosition": null,
+      "targetPosition": null
+    },
+    "iiqSajhjsEgvRYkZxnlUp": {
+      "x": 176,
+      "y": 48,
+      "handles": [
+        {
+          "type": "target",
+          "position": "left",
+          "id": "iiqSajhjsEgvRYkZxnlUp_1"
+        },
+        {
+          "type": "source",
+          "position": "right",
+          "id": "iiqSajhjsEgvRYkZxnlUp_2"
+        }
+      ],
+      "sourcePosition": null,
+      "targetPosition": null
+    }
+  },
+  "mappings": {},
+  "notes": [],
+  "config": {
+    "name": "New Workflow"
+  }
+}

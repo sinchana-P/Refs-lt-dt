@@ -1,0 +1,29 @@
+{
+  "UYrrLVOGaxhhzcpsPEpFK": {
+    "id": "UYrrLVOGaxhhzcpsPEpFK",
+    "name": "ABC",
+    "variables": [
+      {
+        "id": "FCunrQbDHKQLvmyUnQeFm",
+        "type": "string",
+        "name": "name",
+        "enabled": true,
+        "defaultValue": "Helloooo",
+        "scope": "Client",
+        "groupId": "FOWRhzRrrXJmYbawDrQwI",
+        "globalVariableType": ""
+      },
+      {
+        "id": "xGRCmFicYPjeQXfszCZBZ",
+        "type": "string",
+        "name": "port",
+        "enabled": true,
+        "defaultValue": "7000",
+        "groupId": "FOWRhzRrrXJmYbawDrQwI",
+        "globalVariableType": ""
+      }
+    ],
+    "appId": "FXogVKJjOiHXhwyaEBIqK",
+    "gitEnabled": true
+  }
+}

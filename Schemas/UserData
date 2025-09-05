@@ -1,0 +1,16 @@
+{
+  "id": "uLjrnzdofqWrkbHOMBQou",
+  "name": "UserData",
+  "appId": "FXogVKJjOiHXhwyaEBIqK",
+  "folderId": "I29O-FZp-jV63-SXUxRqF",
+  "content": {
+    "type": "json-schema",
+    "destination": "source",
+    "content": null,
+    "name": "UserData",
+    "schemaSource": "file",
+    "reference": "$ref://schema-registry/uLjrnzdofqWrkbHOMBQou"
+  },
+  "itemType": "appSchemas",
+  "gitEnabled": true
+}

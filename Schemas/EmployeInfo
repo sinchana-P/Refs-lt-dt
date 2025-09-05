@@ -1,0 +1,16 @@
+{
+  "id": "GGqlmZjuqbtGiVptPvKOd",
+  "name": "EmployeInfo",
+  "appId": "FXogVKJjOiHXhwyaEBIqK",
+  "folderId": "I29O-FZp-jV63-SXUxRqF",
+  "content": {
+    "type": "json-schema",
+    "destination": "source",
+    "content": null,
+    "name": "EmployeInfo",
+    "schemaSource": "file",
+    "reference": "$ref://schema-registry/GGqlmZjuqbtGiVptPvKOd"
+  },
+  "itemType": "appSchemas",
+  "gitEnabled": true
+}

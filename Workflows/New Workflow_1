@@ -1,0 +1,89 @@
+{
+  "id": "xHFPOpuLeWuZBUYJjvToH",
+  "name": "New Workflow_1",
+  "workflowName": "New Workflow",
+  "itemType": "workflow",
+  "appId": "FXogVKJjOiHXhwyaEBIqK",
+  "folderId": "yTZBhHDizArckJwzWlqcG",
+  "type": "ORCHESTRATION",
+  "version": "0.0.1",
+  "steps": [
+    {
+      "id": "wzeuUROlGPkrmHPkAXZQe",
+      "stepName": "Select Trigger",
+      "stepType": "EVENT_SOURCE",
+      "icon": "",
+      "indicator": "",
+      "description": "",
+      "deletable": true,
+      "config": {
+        "activityType": "EVENT_SOURCE",
+        "activityName": "Start",
+        "activityGroup": "Common",
+        "name": "Select Trigger"
+      }
+    },
+    {
+      "id": "CmTSxHsgJxhstcdNGakhw",
+      "stepName": "End",
+      "stepType": "END",
+      "icon": "",
+      "indicator": "",
+      "description": "",
+      "deletable": true,
+      "config": {
+        "activityType": "END",
+        "activityName": "End",
+        "activityGroup": "Common",
+        "name": "End"
+      }
+    }
+  ],
+  "transitions": [
+    {
+      "id": "initialEdge",
+      "from": "wzeuUROlGPkrmHPkAXZQe",
+      "to": "CmTSxHsgJxhstcdNGakhw",
+      "handleMap": {
+        "source": "wzeuUROlGPkrmHPkAXZQe_1",
+        "target": "CmTSxHsgJxhstcdNGakhw_1"
+      },
+      "name": "",
+      "description": "",
+      "type": "DEFAULT",
+      "lineType": "step",
+      "lineColor": "#8c8c8c"
+    }
+  ],
+  "diagram": {
+    "wzeuUROlGPkrmHPkAXZQe": {
+      "x": 16,
+      "y": 48,
+      "handles": [
+        {
+          "type": "source",
+          "position": "right"
+        }
+      ],
+      "sourcePosition": "right",
+      "targetPosition": null
+    },
+    "CmTSxHsgJxhstcdNGakhw": {
+      "x": 512,
+      "y": 48,
+      "handles": [
+        {
+          "type": "source",
+          "position": "left"
+        }
+      ],
+      "sourcePosition": null,
+      "targetPosition": "left"
+    }
+  },
+  "mappings": {},
+  "notes": [],
+  "config": {
+    "name": "New Workflow"
+  }
+}

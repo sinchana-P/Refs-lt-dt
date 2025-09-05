@@ -1,0 +1,272 @@
+{
+  "id": "RBcpSCUEzLwDjcBISBJkR",
+  "name": "upsert-lookup",
+  "workflowName": "upsert-lookup",
+  "itemType": "workflow",
+  "appId": "FXogVKJjOiHXhwyaEBIqK",
+  "folderId": "yTZBhHDizArckJwzWlqcG",
+  "type": "ORCHESTRATION",
+  "version": "0.0.1",
+  "steps": [
+    {
+      "id": "mRqmmfVnhkOBNVFBiMmJo",
+      "stepName": "RESTService",
+      "stepType": "EVENT_SOURCE",
+      "icon": "",
+      "indicator": "",
+      "description": "",
+      "deletable": true,
+      "config": {
+        "activityName": "RESTService",
+        "activityGroup": "HTTP",
+        "activityType": "EVENT_SOURCE",
+        "name": "RESTService",
+        "description": "",
+        "path": "/upsert?name&age",
+        "method": [
+          "POST"
+        ],
+        "allowedMediaTypes": [
+          "application/json"
+        ],
+        "queryParams": [
+          {
+            "name": "name",
+            "defaultValue": "",
+            "required": false,
+            "type": "text"
+          },
+          {
+            "name": "age",
+            "defaultValue": "",
+            "required": false,
+            "type": "text"
+          }
+        ],
+        "pathParams": [],
+        "headers": [],
+        "output": "",
+        "showHttpFormSelectionPanel": false,
+        "sourceSchemas": []
+      },
+      "activityCluster": []
+    },
+    {
+      "id": "QnfPhdznNPlSGiuuKnEfv",
+      "stepName": "End",
+      "stepType": "END",
+      "icon": "",
+      "indicator": "",
+      "description": "",
+      "deletable": true,
+      "config": {
+        "activityType": "END",
+        "activityName": "End",
+        "activityGroup": "Common",
+        "name": "End",
+        "sourceSchemas": [
+          "JtwjXskLUHOulsOlPNnvk",
+          "vNYkrUbnNTAbsDYEYZHKq",
+          "mRqmmfVnhkOBNVFBiMmJo"
+        ]
+      },
+      "activityCluster": []
+    },
+    {
+      "id": "JtwjXskLUHOulsOlPNnvk",
+      "stepName": "Response",
+      "stepType": "SIMPLE",
+      "icon": "",
+      "indicator": "",
+      "description": "",
+      "deletable": true,
+      "config": {
+        "activityName": "Response",
+        "activityGroup": "Common",
+        "activityType": "SIMPLE",
+        "showHttpFormSelectionPanel": false,
+        "name": "Response",
+        "sourceSchemas": [
+          "mRqmmfVnhkOBNVFBiMmJo",
+          "vNYkrUbnNTAbsDYEYZHKq"
+        ]
+      },
+      "activityCluster": []
+    },
+    {
+      "id": "vNYkrUbnNTAbsDYEYZHKq",
+      "stepName": "LookupUpsert",
+      "stepType": "SIMPLE",
+      "icon": "",
+      "indicator": "",
+      "description": "",
+      "deletable": true,
+      "config": {
+        "activityName": "LookupUpsert",
+        "activityGroup": "Common",
+        "activityType": "SIMPLE",
+        "name": "LookupUpsert",
+        "description": "",
+        "lookupTable": "lt:{\"id\" : \"WVpVdmeMuqYbbqmjKmmQO\",\"name\" : \"UserData\"}",
+        "output": "",
+        "sourceSchemas": [
+          "mRqmmfVnhkOBNVFBiMmJo"
+        ]
+      }
+    }
+  ],
+  "transitions": [
+    {
+      "id": "PoevhJGBrVnNFCvyIqOJl",
+      "from": "JtwjXskLUHOulsOlPNnvk",
+      "to": "QnfPhdznNPlSGiuuKnEfv",
+      "handleMap": {
+        "source": "JtwjXskLUHOulsOlPNnvk_2",
+        "target": "QnfPhdznNPlSGiuuKnEfv_1"
+      },
+      "name": "",
+      "description": "",
+      "type": "DEFAULT",
+      "lineType": "step",
+      "lineColor": "#8c8c8c"
+    },
+    {
+      "id": "hLRkaohCOLFrKRDAwVehd",
+      "from": "mRqmmfVnhkOBNVFBiMmJo",
+      "to": "vNYkrUbnNTAbsDYEYZHKq",
+      "handleMap": {
+        "source": "mRqmmfVnhkOBNVFBiMmJo_1",
+        "target": "vNYkrUbnNTAbsDYEYZHKq_1"
+      },
+      "name": "",
+      "description": "",
+      "type": "DEFAULT",
+      "lineType": "step",
+      "lineColor": "#8c8c8c"
+    },
+    {
+      "id": "uiPxtjtEUXupbFpsrRalp",
+      "from": "vNYkrUbnNTAbsDYEYZHKq",
+      "to": "JtwjXskLUHOulsOlPNnvk",
+      "handleMap": {
+        "source": "vNYkrUbnNTAbsDYEYZHKq_2",
+        "target": "JtwjXskLUHOulsOlPNnvk_1"
+      },
+      "name": "",
+      "description": "",
+      "type": "DEFAULT",
+      "lineType": "step",
+      "lineColor": "#8c8c8c"
+    }
+  ],
+  "diagram": {
+    "mRqmmfVnhkOBNVFBiMmJo": {
+      "x": 16,
+      "y": 48,
+      "handles": [
+        {
+          "type": "source",
+          "position": "right",
+          "id": "mRqmmfVnhkOBNVFBiMmJo_1"
+        }
+      ],
+      "sourcePosition": "right",
+      "targetPosition": null
+    },
+    "QnfPhdznNPlSGiuuKnEfv": {
+      "x": 568,
+      "y": 48,
+      "handles": [
+        {
+          "type": "source",
+          "position": "left",
+          "id": "QnfPhdznNPlSGiuuKnEfv_1"
+        }
+      ],
+      "sourcePosition": null,
+      "targetPosition": "left"
+    },
+    "JtwjXskLUHOulsOlPNnvk": {
+      "x": 404,
+      "y": 48,
+      "handles": [
+        {
+          "type": "target",
+          "position": "left",
+          "id": "JtwjXskLUHOulsOlPNnvk_1"
+        },
+        {
+          "type": "source",
+          "position": "right",
+          "id": "JtwjXskLUHOulsOlPNnvk_2"
+        }
+      ],
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    "vNYkrUbnNTAbsDYEYZHKq": {
+      "x": 192,
+      "y": 48,
+      "handles": [
+        {
+          "type": "source",
+          "position": "left",
+          "id": "vNYkrUbnNTAbsDYEYZHKq_1"
+        },
+        {
+          "type": "source",
+          "position": "right",
+          "id": "vNYkrUbnNTAbsDYEYZHKq_2"
+        }
+      ],
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    }
+  },
+  "mappings": {
+    "JtwjXskLUHOulsOlPNnvk": {
+      "metaInfo": {
+        "id": "JtwjXskLUHOulsOlPNnvk",
+        "versionInfo": {
+          "version": "1.0.0"
+        },
+        "name": "Response",
+        "description": ""
+      },
+      "mappings": {
+        "Response": {
+          "body": {
+            "__expr__": "$.LookupUpsert.lookupOutput"
+          }
+        }
+      },
+      "attributes": {}
+    },
+    "vNYkrUbnNTAbsDYEYZHKq": {
+      "metaInfo": {
+        "id": "vNYkrUbnNTAbsDYEYZHKq",
+        "versionInfo": {
+          "version": "1.0.0"
+        },
+        "name": "LookupUpsert",
+        "description": ""
+      },
+      "mappings": {
+        "LookupUpsert": {
+          "entries": [
+            {
+              "name": "$.RESTService.queryParams.name",
+              "age": "$.RESTService.queryParams.age",
+              "__arrayItemName__": "entry"
+            }
+          ]
+        }
+      },
+      "attributes": {}
+    }
+  },
+  "notes": [],
+  "config": {
+    "name": "New Workflow"
+  }
+}

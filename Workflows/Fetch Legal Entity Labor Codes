@@ -1,0 +1,234 @@
+{
+  "id": "rtfaoEYTnUyAZCGRxRkKq",
+  "name": "Fetch Legal Entity Labor Codes",
+  "workflowName": "Fetch Legal Entity Labor Codes",
+  "itemType": "workflow",
+  "appId": "FXogVKJjOiHXhwyaEBIqK",
+  "folderId": "yTZBhHDizArckJwzWlqcG",
+  "type": "ORCHESTRATION",
+  "version": "0.0.1",
+  "steps": [
+    {
+      "id": "webhook_1",
+      "stepName": "Webhook",
+      "stepType": "EVENT_SOURCE",
+      "icon": "",
+      "indicator": "",
+      "deletable": true,
+      "config": {
+        "activityGroup": "HTTP",
+        "activityName": "Webhook",
+        "description": "Sets up an HTTP webhook endpoint to receive or trigger external events.",
+        "input_activity": [],
+        "output_activities": [
+          "get_legal_entity_labor_codes_1"
+        ],
+        "activityType": "EVENT_SOURCE",
+        "sourceSchemas": [],
+        "is_custom": false,
+        "configActivityId": "Webhook",
+        "method": null,
+        "allowedMediaTypes": null,
+        "encoding": null,
+        "algorithm": "HmacSHA256",
+        "signedContent": null,
+        "lateAfter": null,
+        "name": "Webhook"
+      }
+    },
+    {
+      "id": "get_legal_entity_labor_codes_1",
+      "stepName": "Get Legal Entity Labor Codes",
+      "stepType": "SIMPLE",
+      "icon": "",
+      "indicator": "",
+      "deletable": true,
+      "config": {
+        "activityGroup": "Paycornext",
+        "activityName": "GetLegalEntityLaborCodes",
+        "description": "Gets legal entity labor code information.",
+        "input_activity": [
+          "webhook_1"
+        ],
+        "output_activities": [
+          "response_1"
+        ],
+        "activityType": "SIMPLE",
+        "sourceSchemas": [
+          "webhook_1"
+        ],
+        "is_custom": true,
+        "name": "Get Legal Entity Labor Codes",
+        "templateOfActivity": "Subflow",
+        "templateOfGroup": "Common"
+      }
+    },
+    {
+      "id": "response_1",
+      "stepName": "Response",
+      "stepType": "SIMPLE",
+      "icon": "",
+      "indicator": "",
+      "deletable": true,
+      "config": {
+        "activityGroup": "Common",
+        "activityName": "Response",
+        "description": "Sends a response back to the client or caller, typically in synchronous workflows.",
+        "input_activity": [
+          "get_legal_entity_labor_codes_1"
+        ],
+        "output_activities": [
+          "end_1"
+        ],
+        "activityType": "SIMPLE",
+        "sourceSchemas": [
+          "get_legal_entity_labor_codes_1",
+          "webhook_1"
+        ],
+        "is_custom": false,
+        "configActivityId": "Response",
+        "stream": null,
+        "name": "Response"
+      }
+    },
+    {
+      "id": "end_1",
+      "stepName": "End",
+      "stepType": "END",
+      "icon": "",
+      "indicator": "",
+      "deletable": true,
+      "config": {
+        "activityGroup": "Common",
+        "activityName": "End",
+        "description": "Defines the end of the workflow execution.",
+        "input_activity": [
+          "response_1"
+        ],
+        "output_activities": [],
+        "sourceSchemas": [
+          "get_legal_entity_labor_codes_1",
+          "webhook_1",
+          "response_1"
+        ],
+        "activityType": "END",
+        "is_custom": false,
+        "name": "End"
+      }
+    }
+  ],
+  "transitions": [
+    {
+      "id": "transition-67b73965-ef23-4be4-a474-177300745140",
+      "from": "webhook_1",
+      "to": "get_legal_entity_labor_codes_1",
+      "handleMap": {
+        "source": "webhook_1_2",
+        "target": "get_legal_entity_labor_codes_1_1"
+      },
+      "name": "",
+      "description": "",
+      "type": "DEFAULT",
+      "lineType": "step",
+      "lineColor": "var(--color-gray-7)"
+    },
+    {
+      "id": "transition-77f4a419-2be0-4f70-bcde-3bacaa67f20e",
+      "from": "get_legal_entity_labor_codes_1",
+      "to": "response_1",
+      "handleMap": {
+        "source": "get_legal_entity_labor_codes_1_2",
+        "target": "response_1_1"
+      },
+      "name": "",
+      "description": "",
+      "type": "DEFAULT",
+      "lineType": "step",
+      "lineColor": "var(--color-gray-7)"
+    },
+    {
+      "id": "transition-f5c79f33-2fd6-4196-8927-b81e1d3a2f3b",
+      "from": "response_1",
+      "to": "end_1",
+      "handleMap": {
+        "source": "response_1_2",
+        "target": "end_1_1"
+      },
+      "name": "",
+      "description": "",
+      "type": "DEFAULT",
+      "lineType": "step",
+      "lineColor": "var(--color-gray-7)"
+    }
+  ],
+  "diagram": {
+    "webhook_1": {
+      "x": 50,
+      "y": 50,
+      "handles": [
+        {
+          "id": "webhook_1_2",
+          "type": "source",
+          "position": "right"
+        }
+      ],
+      "sourcePosition": "right",
+      "targetPosition": null
+    },
+    "get_legal_entity_labor_codes_1": {
+      "x": 230,
+      "y": 50,
+      "handles": [
+        {
+          "id": "get_legal_entity_labor_codes_1_1",
+          "type": "target",
+          "position": "left"
+        },
+        {
+          "id": "get_legal_entity_labor_codes_1_2",
+          "type": "source",
+          "position": "right"
+        }
+      ],
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    "response_1": {
+      "x": 410,
+      "y": 50,
+      "handles": [
+        {
+          "id": "response_1_1",
+          "type": "target",
+          "position": "left"
+        },
+        {
+          "id": "response_1_2",
+          "type": "source",
+          "position": "right"
+        }
+      ],
+      "sourcePosition": "right",
+      "targetPosition": "left"
+    },
+    "end_1": {
+      "x": 590,
+      "y": 50,
+      "handles": [
+        {
+          "id": "end_1_1",
+          "type": "target",
+          "position": "left"
+        }
+      ],
+      "sourcePosition": null,
+      "targetPosition": "left"
+    }
+  },
+  "mappings": {},
+  "notes": [],
+  "config": {
+    "name": "Fetch Legal Entity Labor Codes",
+    "description": "Trigger a pipeline via webhook to fetch legal entity labor codes and return them as a response."
+  }
+}

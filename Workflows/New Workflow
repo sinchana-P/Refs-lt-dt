@@ -42,7 +42,7 @@
         "activityType": "SIMPLE",
         "name": "LookupUpsert",
         "description": "",
-        "lookupTable": "lt:{\"id\":\"DtfnzZUiDdilqgUBdmxmQ\",\"name\":\"Feree22\"}",
+        "lookupTable": "lt:{\"id\" : \"WVpVdmeMuqYbbqmjKmmQO\", \"name\" : \"UserData\"}",
         "config.name": "LookupUpsert",
         "sourceSchemas": [
           "DVLmBNBMlcGDfDsUUyIoa"
